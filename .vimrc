@@ -13,6 +13,9 @@ call dein#add('tomtom/tcomment_vim')
 call dein#add('itchyny/lightline.vim')
 call dein#add('Shougo/neocomplcache.vim')
 call dein#add('tpope/vim-fugitive')
+call dein#add('w0rp/ale')
+call dein#add('thinca/vim-quickrun')
+
 call dein#end()
 "vim設定"
 set number
@@ -84,3 +87,7 @@ map <C-n> :NERDTreeToggle<CR>
 
 ""tab全部閉じ
 nnoremap <Space>z :wqa<CR>
+
+""QuickRun
+nnoremap <Space>q :QuickRun<CR>
+nnoremap <Space>c :e /home/supa/dotfiles/vimrc/cheat/cheat(vim).md<CR>
