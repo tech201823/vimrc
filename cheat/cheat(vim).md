@@ -4,7 +4,8 @@
 -編集中のコードを即時実行space+q<br>
 -編集中のmdを即時実行space+o<br>
 -nerdtree実行space+n<br>
--選択指定範囲ctrl+k<br> 
+-選択指定範囲vでヴィジュアルモード+カーソル移動<br> 
+-vmodeで選択Space+rで置換<br>
 ## nerdtree
 -nerdtree移動はvimと同じ<br>
 -mでメニューが開く<br>
