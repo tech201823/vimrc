@@ -18,6 +18,8 @@ call dein#add('thinca/vim-quickrun')
 call dein#add('plasticboy/vim-markdown')
 call dein#add('kannokanno/previm')
 call dein#add('tyru/open-browser.vim')
+call dein#add('osyo-manga/vim-over')
+
 
 call dein#end()
 "vim設定"
@@ -98,3 +100,12 @@ nnoremap <Space>c :tabe /home/supa/dotfiles/vimrc/cheat/cheat(vim).md<CR>
 ""markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 nnoremap <Space>o :PrevimOpen<CR>
+
+""vim-over
+" ---------- 'osyo-manga/vim-over' ----------
+" 全体置換
+nnoremap <silent> <Space>r  :OverCommandLine<CR>%s//g<Left><Left>
+
+" 選択範囲置換
+vnoremap <silent> <Space>r  :OverCommandLine<CR>s//g<Left><Left>
+
