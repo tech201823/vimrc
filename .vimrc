@@ -13,7 +13,6 @@ call dein#add('tomtom/tcomment_vim')
 call dein#add('itchyny/lightline.vim')
 call dein#add('Shougo/neocomplcache.vim')
 call dein#add('tpope/vim-fugitive')
-
 call dein#end()
 "vim設定"
 set number
@@ -75,3 +74,13 @@ if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
 
+" tab
+nnoremap <Space>n gt
+nnoremap <Space>b gT
+nnoremap <C-t> :tabnew<CR>
+
+""nerdtree
+map <C-n> :NERDTreeToggle<CR>
+
+""tab全部閉じ
+nnoremap <Space>z :wqa<CR>
