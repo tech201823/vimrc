@@ -12,7 +12,7 @@ call dein#add('scrooloose/nerdtree')
 call dein#add('tomtom/tcomment_vim')
 call dein#add('itchyny/lightline.vim')
 call dein#add('Shougo/neocomplcache.vim')
-
+call dein#add('tpope/vim-fugitive')
 
 call dein#end()
 "vim設定"
@@ -74,3 +74,4 @@ smap <expr><TAB> neosnippet#expandable() <Bar><bar> neosnippet#jumpable() ? "\<P
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
+
