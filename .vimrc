@@ -15,6 +15,9 @@ call dein#add('Shougo/neocomplcache.vim')
 call dein#add('tpope/vim-fugitive')
 call dein#add('w0rp/ale')
 call dein#add('thinca/vim-quickrun')
+call dein#add('plasticboy/vim-markdown')
+call dein#add('kannokanno/previm')
+call dein#add('tyru/open-browser.vim')
 
 call dein#end()
 "vim設定"
@@ -90,4 +93,8 @@ nnoremap <Space>z :wqa<CR>
 
 ""QuickRun
 nnoremap <Space>q :QuickRun<CR>
-nnoremap <Space>c :e /home/supa/dotfiles/vimrc/cheat/cheat(vim).md<CR>
+nnoremap <Space>c :tabe /home/supa/dotfiles/vimrc/cheat/cheat(vim).md<CR>
+
+""markdown
+au BufRead,BufNewFile *.md set filetype=markdown
+nnoremap <Space>o :PrevimOpen<CR>
