@@ -1,0 +1,43 @@
+snippet pub
+	public class ${1:class} {
+		public static void main(String[] args) {
+	        	${2:code}
+		}		
+	}
+
+snippet Sys
+	System.out.println(${1:string|num})${2:semi}
+
+snippet Str
+	String ${1:str} = new java.util.Scanner(System.in).nextLine()${2:semi}
+
+snippet int
+	int ${1:num} = new java.util.Scanner(System.in).nextInt()${2:semi}
+
+snippet if
+	if (${1:torf}) {
+		${2:f}
+	} else {
+		${3:f}
+	}
+	${4:f}
+
+snippet while 
+	while (${1:torf}) {
+	${2:f}
+	}
+	${3:f}
+
+snippet switch
+	switch (${1:num}) {
+	${2:f}
+	}
+
+snippet case
+	case ${1:num}:
+		${2:f}
+		break;
+	${3:next}
+
+snippet int
+	int ${1:str} = new java.util.Random().nextInt(${2:num})${3:semi}
