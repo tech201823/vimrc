@@ -50,8 +50,8 @@ let g:neocomplcache_dictionary_filetype_lists = {
     \ }
 
 " Plugin key-mappings.
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-inoremap <expr><C-l>     neocomplcache#complete_common_string()
+inoremap <expr><C-u>     neocomplcache#undo_completion()
+inoremap <expr><C-e>    neocomplcache#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
@@ -70,8 +70,8 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 ""neosnippet
 " Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+imap <TAB>     <Plug>(neosnippet_expand_or_jump)
+smap <TAB>     <Plug>(neosnippet_expand_or_jump)
 
 " SuperTab like snippets behavior.
 imap <expr><TAB> neosnippet#expandable() <Bar><bar> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -99,7 +99,7 @@ nnoremap <Space>c :tabe /home/supa/dotfiles/vimrc/cheat/cheat(vim).md<CR>
 
 ""markdown
 au BufRead,BufNewFile *.md set filetype=markdown
-nnoremap <Space>o :PrevimOpen<CR>
+nnoremap <Space>r :PrevimOpen<CR>
 
 ""vim-over
 " ---------- 'osyo-manga/vim-over' ----------
@@ -114,4 +114,8 @@ inoremap  <C-j>   <Down>
 inoremap  <C-k>   <Up>
 inoremap  <C-h>   <Left>
 inoremap  <C-l>   <Right>
+
+" 補完候補が表示されている場合は確定。そうでない場合は改行
+inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "<CR>"
+
 
