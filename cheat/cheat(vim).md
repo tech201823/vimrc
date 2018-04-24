@@ -47,3 +47,7 @@ __(例)__<br>
 ![エビフライトライアングル](687474703a2f2f692e696d6775722e636f6d2f4a6a7773632e6a7067.jpeg)<br>
 ## コメントアウトプラグインtcomment<br>
 -gccでカレント行vモードでgc複数<br>
+
+## gitコマンド
+-git reset [commit ID]<br>
+-git commit ID 確認<br>
