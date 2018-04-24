@@ -49,5 +49,6 @@ __(例)__<br>
 -gccでカレント行vモードでgc複数<br>
 
 ## gitコマンド
--git reset [commit ID]<br>
+-git reset --hard [commit ID]<br>
 -git commit ID 確認<br>
+-git push -f origin masterでreset後はプッシュできる。<br>
