@@ -15,6 +15,9 @@
 -スニペット展開はctrl+e<br>
 -スニペットはtabを使うと次の入力に移れる<br>
 
+## neocmplchace
+-展開はctrl+k<br>
+
 ## markdown
 -コード入力は以下のように行う<br>
 ```php
