@@ -55,3 +55,7 @@ __(例)__<br>
 -git reset --hard [commit ID]<br>
 -git commit ID 確認<br>
 -git push -f origin masterでreset後はプッシュできる。<br>
+
+## ssh
+-https://asciich.ch/wordpress/ssh-server-unter-archlinux-installieren-und-starten/ <br>
+-http://raspi.seesaa.net/article/414986373.html <br>
