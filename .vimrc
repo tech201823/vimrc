@@ -109,3 +109,8 @@ nnoremap <silent> <Space>r  :OverCommandLine<CR>%s//g<Left><Left>
 " 選択範囲置換
 vnoremap <silent> <Space>r  :OverCommandLine<CR>s//g<Left><Left>
 
+" インサートモードでも移動可能
+inoremap  <C-j>   <Down>
+inoremap  <C-k>   <Up>
+inoremap  <C-h>   <Left>
+inoremap  <C-l>   <Right>
