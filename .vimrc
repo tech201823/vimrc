@@ -106,3 +106,9 @@ inoremap <expr><C-k> neocomplcache#close_popup()
         imap <C-e>     <Plug>(neosnippet_expand_or_jump)
         smap <C-e>     <Plug>(neosnippet_expand_or_jump)
         xmap <C-e>     <Plug>(neosnippet_expand_target)
+
+""teraterm metakey
+set nocompatible
+
+" マークダウン即時実行
+nnoremap <Space>p :PrevimOpen

@@ -2,7 +2,7 @@
 -[vimチートサイト](https://vim.rtorr.com/lang/ja/)<br>
 上記を参考にした<br>
 -編集中のコードを即時実行space+q<br>
--編集中のmdを即時実行space+o<br>
+-編集中のmdを即時実行space+p<br>
 -nerdtree実行space+n<br>
 -選択指定範囲vでヴィジュアルモード+カーソル移動<br> 
 -vmodeで選択Space+rで置換<br>
@@ -57,5 +57,9 @@ __(例)__<br>
 -git push -f origin masterでreset後はプッシュできる。<br>
 
 ## ssh
--https://asciich.ch/wordpress/ssh-server-unter-archlinux-installieren-und-starten/ <br>
--http://raspi.seesaa.net/article/414986373.html <br>
+-portを開放する、ルータとpc両方ただpcのローカルipは固定。<br>
+-再起動起動コマンドは様々あるのでいろいろ試すしかない<br>
+-ARCH LINUXは以下のコマンド
+```
+sudo systemctl start sshd.service
+```
