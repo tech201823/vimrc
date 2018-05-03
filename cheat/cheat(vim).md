@@ -63,3 +63,8 @@ __(例)__<br>
 ```
 sudo systemctl start sshd.service
 ```
+
+## tmux
+-tmux新規セッションtmux打つだけ
+-tmuxアタッチtmux aコマンド
+-tmuxデタッチはCtrl＋dコマンド
