@@ -7,11 +7,9 @@ call dein#begin(expand('~/.vim/dein'))
 
 call dein#add('Shougo/dein.vim')
 call dein#add('Shougo/vimproc.vim', {'build': 'make'})
-call dein#add('Shougo/neosnippet')
 call dein#add('scrooloose/nerdtree')
 call dein#add('tomtom/tcomment_vim')
 call dein#add('itchyny/lightline.vim')
-call dein#add('Shougo/neocomplcache.vim')
 call dein#add('tpope/vim-fugitive')
 call dein#add('w0rp/ale')
 call dein#add('thinca/vim-quickrun')
@@ -19,7 +17,8 @@ call dein#add('plasticboy/vim-markdown')
 call dein#add('kannokanno/previm')
 call dein#add('tyru/open-browser.vim')
 call dein#add('osyo-manga/vim-over')
-
+call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neocomplete.vim')  
 
 call dein#end()
 "vim設定"
@@ -67,48 +66,35 @@ inoremap  <C-h>   <Left>
 inoremap  <C-l>   <Right>
 
 
-""neosnippet link
-let g:neosnippet#snippets_directory='/home/supa/dotfiles/vimrc/neosnippet-snippets/snippets'
-" SuperTab like snippets behavior.
-imap  <expr><TAB>
-    \ pumvisible() ? "\<C-n>" :
-    \ neosnippet#expandable_or_jumpable() ?
-    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
-let g:neosnippet#snippets_directory='/home/supa/dotfiles/vimrc/neosnippet-snippets/snippets'
- 
-" SuperTab like snippets behavior.
-imap  <expr><TAB>
-    \ pumvisible() ? "\<C-n>" :
-    \ neosnippet#expandable_or_jumpable() ?
-    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
- 
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
- 
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
-
-" neocomplcache
-let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
-inoremap <expr><Space>  pumvisible() ? "\<C-n>" : "\<Space>"
-inoremap <expr><C-k> neocomplcache#close_popup()
-
-""neosnippet
-" Plugin key-mappings.
-        imap <C-e>     <Plug>(neosnippet_expand_or_jump)
-        smap <C-e>     <Plug>(neosnippet_expand_or_jump)
-        xmap <C-e>     <Plug>(neosnippet_expand_target)
-
 ""teraterm metakey
 set nocompatible
 
 " マークダウン即時実行
 nnoremap <Space>p :PrevimOpen
+
+""neosnipet
+let g:neosnippet#snippets_directory='/home/supa/dotfiles/vimrc/neosnippet-snippets/snippets'
+ 
+""neosinipet&neocomplete
+"----------------------------------------------------------
+" neocomplete・neosnippetの設定
+"----------------------------------------------------------
+if dein#tap('neocomplete.vim')
+    " Vim起動時にneocompleteを有効にする
+    let g:neocomplete#enable_at_startup = 1
+    " smartcase有効化. 大文字が入力されるまで大文字小文字の区別を無視する
+    let g:neocomplete#enable_smart_case = 1
+    " 3文字以上の単語に対して補完を有効にする
+    let g:neocomplete#min_keyword_length = 3
+    " 区切り文字まで補完する
+    let g:neocomplete#enable_auto_delimiter = 1
+    " 1文字目の入力から補完のポップアップを表示
+    let g:neocomplete#auto_completion_start_length = 1
+    " バックスペースで補完のポップアップを閉じる
+    inoremap <expr><BS> neocomplete#smart_close_popup()."<C-h>"
+
+    " エンターキーで補完候補の確定. スニペットの展開もエンターキーで確定・・・・・・②
+    imap <expr><CR> neosnippet#expandable() ? "<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "<C-y>" : "<CR>"
+    " タブキーで補完候補の選択. スニペット内のジャンプもタブキーでジャンプ・・・・・・③
+    imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "<TAB>"
+endif
