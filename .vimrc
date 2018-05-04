@@ -23,7 +23,7 @@ call dein#add('Shougo/neocomplete.vim')
 call dein#end()
 "vim設定"
 set number
-syntax on
+syntax enable
 colorscheme molokai
 set t_Co=256
 set laststatus=2
@@ -98,3 +98,5 @@ if dein#tap('neocomplete.vim')
     " タブキーで補完候補の選択. スニペット内のジャンプもタブキーでジャンプ・・・・・・③
     imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "<TAB>"
 endif
+
+inoremap <ESC> <ESC>:set iminsert=0<CR>  " ESCでIMEを確実にOFF
