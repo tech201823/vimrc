@@ -19,13 +19,24 @@ call dein#add('tyru/open-browser.vim')
 call dein#add('osyo-manga/vim-over')
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neocomplete.vim')  
+call dein#add('tomasr/molokai')
+
 
 call dein#end()
 "vim設定"
 set number
-syntax enable
+
+
+if dein#tap('molokai') " molokaiがインストールされていれば
+    colorscheme molokai " カラースキームにmolokaiを設定する
+endif
+
+
+
+
 colorscheme molokai
 set t_Co=256
+syntax on
 set laststatus=2
 "カーソル位置保存
 augroup vimrcEx
@@ -100,3 +111,6 @@ if dein#tap('neocomplete.vim')
 endif
 
 inoremap <ESC> <ESC>:set iminsert=0<CR>  " ESCでIMEを確実にOFF
+
+""カレントカーソル行強調
+set cursorline
