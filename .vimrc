@@ -31,10 +31,6 @@ if dein#tap('molokai') " molokaiがインストールされていれば
     colorscheme molokai " カラースキームにmolokaiを設定する
 endif
 
-
-
-
-colorscheme molokai
 set t_Co=256
 syntax on
 set laststatus=2
