@@ -20,13 +20,12 @@ call dein#add('osyo-manga/vim-over')
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neocomplete.vim')  
 call dein#add('tomasr/molokai')
-
+call dein#add('cohama/lexima.vim')
 
 call dein#end()
 "vim設定"
 set number
-
-
+set smartindent
 if dein#tap('molokai') " molokaiがインストールされていれば
     colorscheme molokai " カラースキームにmolokaiを設定する
 endif
@@ -110,3 +109,4 @@ inoremap <ESC> <ESC>:set iminsert=0<CR>  " ESCでIMEを確実にOFF
 
 ""カレントカーソル行強調
 set cursorline
+
