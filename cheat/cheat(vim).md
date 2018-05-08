@@ -68,3 +68,9 @@ sudo systemctl start sshd.service
 -tmux新規セッションtmux打つだけ
 -tmuxアタッチtmux aコマンド
 -tmuxデタッチはCtrl＋dコマンド
+
+## vscode
+-tab切り替えはctrl+TAB<br>
+-保存はctrl+s<br>
+![エディタ](20170625.png)<br>
+
