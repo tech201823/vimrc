@@ -73,4 +73,3 @@ sudo systemctl start sshd.service
 -tab切り替えはctrl+TAB<br>
 -保存はctrl+s<br>
 ![エディタ](20170625.png)<br>
-
